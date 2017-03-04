@@ -1,0 +1,36 @@
+<header>
+    <div class="navbar-wrapper">
+        <nav class="navbar navbar-inverse navbar-static-top black-color" role="navigation">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                                    <span class="sr-only">Toggle navigation</span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                    <span class="icon-bar"></span>
+                                </button>
+                </div>
+                <div class="container-fluid" id="">
+                    <div class="navbar-header">
+                        <a [routerLink]="['/']"><img src="./public/images/logo.png" alt=""></a>
+                    </div>
+
+                    <ul class="nav navbar-nav">
+                        <li><a routerLink="/">Home</a> </li>
+                        <!-- <li><a routerLink="toprank"></a> </li>
+                                  <li><a routerLink="blog"></a> </li> -->
+                        <li><a routerLink="/aboutUs">About Us</a> </li>
+
+
+
+                    </ul>
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a routerLink="/logIn">Log In</a> </li>
+                        <li><a routerLink="/signUp">Sign Up</a> </li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+    </div>
+</header>

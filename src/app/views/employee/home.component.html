@@ -1,0 +1,139 @@
+<employee></employee>
+
+<div style="display:inline-flex">
+    <div style="display: inline-block;width:20%">
+
+        <div class="container" style="padding-left:0px;width:100%">
+            <div class="row">
+                <div class="col-md-12">
+
+
+                    <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
+
+
+                        <div class="input-group" id="adv-search" style="display: inline-block">
+
+
+
+
+                            <div class="form-group">
+                                <label for="filter">Choose Category</label>
+
+                                <select class="form-control" (change)="onChange($event.target.value)" name="category">
+                                        <option  selected value> -- Select Category -- </option>
+                                        <option *ngFor="let cat of jobCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
+                                        
+                                    </select>
+                            </div>
+
+                            <div class="form-group" *ngIf="categorySelected">
+                                <label for="filter">Choose Sub Category</label>
+
+                                <select class="form-control" name="subcategory" (change)="subCategoryChanged($event.target.value)">
+                                        <option  selected value> -- Select sub Category -- </option>
+                                        <option *ngFor="let cat of subCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
+                                        
+                                    </select>
+                            </div>
+
+                            <br/>
+                            <div class="form-group">
+                                <br/>
+                                <label for="filter">Search By Keywords</label>
+                            </div>
+
+                            <div class="form-group" style="display: table-row">
+
+
+                                <input type="text" [(ngModel)]="searchModel.searchString" class="form-control" placeholder="Search for snippets" name="jobSearch" />
+                                <div class="input-group-btn">
+
+                                    <div class="btn-group" role="group">
+
+                                        <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-search" aria-hidden="true"></span></button>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+
+                            <br/><br/><br/>
+
+
+
+
+                        </div>
+                    </form>
+
+                    <div style="display:table-row">
+
+                        <h1>Recent Searches</h1>
+                        <br/>
+                        <a href="">Search 1</a>
+                        <br/>
+                        <a href="">Search 2</a>
+                        <br/>
+                        <a href="">Search 3</a>
+                        <br/>
+                        <a href="">Search 4</a>
+                        <br/>
+                        <a href="">Search 5</a>
+                        <br/>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    <div style="width:80%">
+        <div class="container" style="width:100%">
+            <div class="col-md-12">
+
+                <div *ngFor = "let job of jobList">
+                    <a routerLink="/employee/viewjob/{{ job.jobTitle }}/{{ job.id }}">
+                        <h1>{{ job.jobTitle }}</h1>
+                    </a>
+                    <p>{{ job.jobDescription }}</p>
+                    <div>
+                        <span class="badge">Posted {{ job.createdAt }}</span>
+                        <!--<div class="pull-right">
+                            <span class="label label-default">alice</span>
+                            <span class="label label-primary">story</span>
+                            <span class="label label-success">blog</span>
+                            <span class="label label-info">personal</span>
+                            <span class="label label-warning">Warning</span>
+                            <span class="label label-danger">Danger</span>
+                        </div>-->
+                    </div>
+                    <hr>
+                </div>
+
+
+                <!--<div>
+                    <h1>Revolution has begun!</h1>
+                    <p>'I am bound to Tahiti for more men.' 'Very good. Let me board you a moment—I come in peace.' With that
+                        he leaped from the canoe, swam to the boat; and climbing the gunwale, stood face to face with the
+                        captain. 'Cross your arms, sir; throw back your head. Now, repeat after me. As soon as Steelkilt
+                        leaves me, I swear to beach this boat on yonder island, and remain there six days. If I do not, may
+                        lightning strike me!'A pretty scholar,' laughed the Lakeman. 'Adios, Senor!' and leaping into the
+                        sea, he swam back to his comrades.</p>
+                    <div>
+                        <span class="badge">Posted 2012-08-02 20:47:04</span>
+                        <div class="pull-right"><span class="label label-default">alice</span> <span class="label label-primary">story</span> <span
+                                class="label label-success">blog</span> <span class="label label-info">personal</span> <span
+                                class="label label-warning">Warning</span>
+                            <span class="label label-danger">Danger</span></div>
+                    </div>
+                    <hr>
+                </div>-->
+
+
+            </div>
+        </div>
+    </div>
+</div>

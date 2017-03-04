@@ -1,0 +1,69 @@
+<employer></employer>
+
+
+
+<h1 class="text-center">Edit Job Post</h1>
+
+
+<form (ngSubmit)="saveChanges()" >
+    
+    
+    
+   <div class="form-group">
+        <label for="category">Category</label>
+        <select class="form-control" id="category" name="category" required="required" (change)="onChange($event.target.value)">	  	
+                  <option  selected value> -- Select Category -- </option>
+                  <option *ngFor="let cat of jobCategory" value="{{ cat.id }}" selected="{{cat.id === jobPost.jobCategory ? onChange(cat.id) : '' }}">{{ cat.categoryVarName }}</option>	  		
+	  	</select>
+    </div>
+
+    <div class="form-group" *ngIf="jobPost.jobSubCategory[0] ">
+        <label for="subCategory">Sub Category</label>
+        <select class="form-control" id="subCategory" name="subCategory"  (change)="subCategoryChanged($event.target.value)">	  	
+                  <option  selected value> -- Select Sub Category -- </option>
+                  <option *ngFor="let cat of subCategory" value="{{ cat.id }}" selected="{{cat.id === jobPost.jobSubCategory[0] ? 'selected' : '' }}">{{ cat.categoryVarName }}</option>	  		
+	  	</select>
+    </div>
+
+    <!--<div class="form-group" *ngIf="jobPost.jobSubCategory[0] && subCategory">
+        <label for="subCategory">Sub Category</label>
+        <select class="form-control" id="subCategory" name="subCategory"  (change)="subCategoryChanged($event.target.value)">	  	
+                  <option  selected value> -- Select Sub Category -- </option>
+                  <option *ngFor="let cat of subCategory" value="{{ cat.id }}" selected="{{cat.id === jobPost.jobSubCategory[0] ? true : false}}">{{ cat.categoryVarName }}</option>	  		
+	  	</select>
+    </div>-->
+
+    <div class="form-group">
+        <label for="title">Title</label>
+        <input type="text" [(ngModel)]="jobPost.jobTitle" name="title" id="title" placeholder="Job Title" class="form-control" required="required">
+    </div>
+    <div class="form-group">
+        <label for="description">Description</label>
+        <textarea rows="5"  [(ngModel)]="jobPost.jobDescription" name="description" id="description" placeholder="Job Description" class="form-control" required="required"></textarea>
+    </div>
+    <div class="form-group">
+        <label for="deadline">DeadLine</label>
+        <input type="date"  [(ngModel)]="jobPost.deadline" name="deadline" id="deadline" placeholder="Deadline" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="budget">Budget</label>
+        <input type="text"  [(ngModel)]="jobPost.budget" name="budget" id="budget" placeholder="Budget" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="paymentType">Payment Type</label>
+        <input type="text"  [(ngModel)]="jobPost.paymentType" name="paymentType" id="paymentType" placeholder="Payment Type" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="projectType">Project Type</label>
+        <input type="text"  [(ngModel)]="jobPost.projectType" name="projectType" id="projectType" placeholder="Project Type" class="form-control">
+    </div>
+
+
+
+    <button type="submit" class="btn btn-default">Save</button>
+</form>
+
+<form action="deleteJobPost" method="post">
+    <input type="hidden" name="id" value="">
+    <button type="submit" class="btn btn-default">Delete Post</button>
+</form>

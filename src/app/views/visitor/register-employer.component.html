@@ -1,0 +1,41 @@
+<visitor></visitor>
+<h1>Register Client</h1>
+<form (ngSubmit)="onSubmit()" #employerForm="ngForm" class="form-group">
+	<input type="text"  class="form-control"  [(ngModel)]="employer.userName" name="userName" #userName="ngModel" placeholder="User Name" required>
+	<div [hidden]="userName.valid || userName.pristine"
+             class="alert alert-danger">
+          Name is required
+    </div>
+	TODO: remove this: {{employer.userName}}
+	<input type="text"  class="form-control"  [(ngModel)]="employer.fName"   name="fName" #fName="ngModel" placeholder="First Name" required>
+	<div [hidden]="fName.valid || fName.pristine"
+             class="alert alert-danger">
+          Name is required
+    </div>
+	TODO: remove this: {{employer.fName}}
+	<input type="text"  class="form-control"  [(ngModel)]="employer.lName"   name="lName" #lName="ngModel" placeholder="Last Name" required>
+	<div [hidden]="lName.valid || lName.pristine"
+             class="alert alert-danger">
+          Name is required
+    </div>
+	TODO: remove this: {{employer.lName}}
+	<input type="text"  class="form-control"  [(ngModel)]="employer.eMail"   name="eMail" #eMail="ngModel" placeholder="EMAIL" required>
+	<div [hidden]="eMail.valid || eMail.pristine"
+             class="alert alert-danger">
+          Name is required
+    </div>
+	TODO: remove this: {{employer.eMail}}
+	<input type="password"  class="form-control"  [(ngModel)]="employer.password" name="password" #password="ngModel" placeholder="Password" required>
+	<div [hidden]="password.valid || password.pristine"
+             class="alert alert-danger">
+          Name is required
+    </div>
+	TODO: remove this: {{employer.password}}
+	<input type="password"  class="form-control"                                  name="repassword"  placeholder="Type password again" required>
+
+	<input type="submit">
+</form>
+<br/>
+<h1><a href="logInFacebook">Facebook Authentication</a></h1>
+<br/>
+<h1><a href="logInGoogle">Google Authentication</a></h1>

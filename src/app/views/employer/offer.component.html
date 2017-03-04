@@ -1,0 +1,232 @@
+<employer></employer>
+
+
+
+
+<style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    
+    .row.content {
+        height: 100%
+    }
+    /* Set gray background color and 100% height */
+    
+    .sidenav {
+        background-color: #f1f1f1;
+        height: 100%;
+    }
+    /* Set black background color, white text and some padding */
+    
+    footer {
+        background-color: #555;
+        color: white;
+        padding: 15px;
+    }
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    
+    @media screen and (max-width: 767px) {
+        .sidenav {
+            height: auto;
+            padding: 15px;
+        }
+        .row.content {
+            height: auto;
+        }
+    }
+    
+    .hidden {
+        display: none;
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row content">
+        <div class="col-sm-3 sidenav">
+            <p>Offers</p>
+            <div class="nav">
+                <div class="taboz">
+
+                    <ul class="nav nav-pills nav-stacked">
+
+                        <li *ngFor="let job of postedJobs"><a href="#{{job.id}}" (click)="tabContentClicked($event)">{{job.jobTitle}}</a></li>
+
+
+                    </ul>
+
+                </div>
+            </div>
+        </div>
+
+
+        <div *ngFor="let job of postedJobs; let i=index" class="col-sm-9 tab-content" id="{{job.id}}" [hidden]="!i==0">{{i}} VS {{(i)==0}}
+            <div class="form-group">
+
+
+
+                <h1 class="form-control">{{job.jobTitle}}</h1>
+
+
+                <div *ngFor="let proposal of job.proposals" class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+                    <!--  <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingOne">
+                                <h4 class="panel-title">
+                                  <a data-toggle="collapse" data-parent="#accordion" href="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                    Collapsible Group Item #1
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseOne" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="headingOne">
+                                <div class="panel-body">
+                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                              </div>
+                            </div> -->
+
+
+                    <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="headingTwo">
+                            <h4 class="panel-title">
+                                <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse_{{proposal.id}}" aria-expanded="false">
+
+
+                                    <strong>   
+                                                        {{proposal.candidate.fName + '  ' + proposal.candidate.lName + '   ' }}
+                                                </strong>
+                                    <div>
+                                        {{proposal.candidate.updatedAt}}
+                                    </div>
+
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="collapse_{{proposal.id}}" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingTwo">
+                            <div class="panel-body">
+                                <div class="form-group">
+
+                                    View Profile of
+                                    <a href="#" target="_blank">
+                                        {{proposal.candidate.fName + '  ' + proposal.candidate.lName + '   ' }}
+                                    </a>
+
+                                    <br>
+                                    <br>
+                                    <br> cover letter
+                                    <p>
+                                        {{proposal.coverLetter}}
+                                    </p>
+                                    <br/> Why Me
+                                    <p>
+                                        {{proposal.whyToChoose}}
+                                    </p>
+                                    <br/> Duration
+                                    <p>
+                                        {{proposal.duration.duration}}
+                                    </p>
+                                    <br/> Price
+                                    <p>
+                                        {{proposal.price}} {{proposal.currency.currency}}</p>
+                                    <br/>
+
+
+
+                                </div>
+
+
+                                <form (ngSubmit)="sendMessage(proposal.candidate.id,job.id)">
+                                    <div class="form-group">
+                                        <input type="submit" value="Contact the Bidder">
+                                    </div>
+                                </form>
+
+                                <form (ngSubmit)="confirmProposal()">
+
+                                    <div class="form-group">
+                                        <input type="submit" value="Confirm Proposal">
+                                    </div>
+
+                                </form>
+
+                                <form (ngSubmit)="declineProposal()">
+                                    <input type="hidden" name="proposal" value="#">
+                                    <input type="hidden" name="candidade" value="#">
+                                    <div class="form-group">
+                                        <input type="submit" value="Decline Proposal">
+                                    </div>
+                                </form>
+
+                                <hr/>
+
+
+                                <!--<label class="form-control">Applicant was declined</label>
+
+                                <label class="form-control">Applicant was accepted</label>-->
+
+                                <form (ngSubmit)="leaveFeadback($event,job.id,proposal.candidate.id)">
+
+
+                                    <label class="form-control">Leave Feedback</label>
+                                    <select name="feedback" class="form-control" (change)="feadbackScoreChanged($event.target.value,job.id,proposal.candidate.id)">
+                                                    <option value="0" selected>0</option>
+                                                    <option value="1" >1</option>
+                                                    <option value="2">2</option>
+                                                    <option value="3">3</option>
+                                                    <option value="4">4</option>
+                                                    <option value="5">5</option>
+                                    </select>
+
+                                    <label class="form-control">Write your experience</label>
+                                    <textarea name="feedbackText" class="form-control"></textarea>
+                                    <div class="form-group">
+                                        <input type="submit" value="Submit Feedback">
+                                    </div>
+                                </form>
+
+                                <div class="form-group">
+                                    <br/>
+                                    <br/>
+                                    <br/>
+                                    <h1 class="form-control">Your feedback to Worker</h1>
+                                    <label class="">feedback text</label>
+                                    <br/>
+                                    <br/>
+                                    <label>Starts  feedback score</label>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+
+
+
+                    <!--
+                     <div class="panel panel-default">
+                              <div class="panel-heading" role="tab" id="headingThree">
+                                <h4 class="panel-title">
+                                  <a class="collapsed" data-toggle="collapse" data-parent="#accordion" href="#collapse2" aria-expanded="false" aria-controls="collapseThree">
+                                    Collapsible Group Item #3
+                                  </a>
+                                </h4>
+                              </div>
+                              <div id="collapseThree" class="panel-collapse collapse" role="tabpanel" aria-labelledby="headingThree">
+                                <div class="panel-body">
+                                  Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
+                                </div>
+                              </div>
+                            </div> -->
+
+
+                </div>
+
+
+            </div>
+        </div>
+
+
+
+
+
+
+
+    </div>
+</div>

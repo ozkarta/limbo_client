@@ -1,0 +1,59 @@
+<employer></employer>
+
+
+
+<div class="container-fluid" >
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <p>Your Account</p>
+      <div class="nav">
+        <div class="taboz">
+          <ul class="nav nav-pills nav-stacked">
+            <li><a  [routerLink]="['/employer/account']" >Personal Information</a></li>
+            <li><a  [routerLink]="['/employer/account', {outlets: {'account': ['addresses']}}]" >Address</a></li>
+            <li><a  [routerLink]="['/employer/account', {outlets: {'account': ['assotiation']}}]" >Assotiate profile</a></li>
+            <li><a  [routerLink]="['/employer/account', {outlets: {'account': ['changepassword']}}]" >Change Password</a></li>
+            <li><a  [routerLink]="['/employer/account', {outlets: {'account': ['deactivation']}}]" >Deactivate Profile</a></li>          
+          </ul><br>
+        </div>
+      </div>
+      <div class="input-group hidden">
+        <input type="text" class="form-control" placeholder="Search Blog..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>
+    </div>
+
+
+
+<router-outlet name="account"></router-outlet>
+
+ 
+
+
+
+
+
+
+        
+
+  </div>
+</div>
+
+<!--<script>
+ $(document).ready(function () {
+    $('.taboz ul li:first').addClass('active');
+    $('.tab-content:not(:first)').hide();
+    $('.taboz ul li a').click(function (event) {
+        event.preventDefault();
+        var content = $(this).attr('href');
+        $(this).parent().addClass('active');
+        $(this).parent().siblings().removeClass('active');
+        $(content).show();
+        $(content).siblings('.tab-content').hide();
+    });
+});
+</script>-->
