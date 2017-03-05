@@ -20,12 +20,12 @@ import { Duration } from '../models/duration';
 @Injectable()
 export class CategoryService extends GenericHttp{
 
-    url: string;
+    
     //categoryList: JobCategory[];
 
     constructor(private http: Http){
         super();
-        this.url = 'http://localhost:3311/api/category';
+        
         //this.categoryList = [];
     }
 
@@ -34,7 +34,7 @@ export class CategoryService extends GenericHttp{
         let headers = new Headers({'Content-Type':'application/json'});
         let options = new RequestOptions({headers:headers});
         
-        return this.http.get(this.url)
+        return this.http.get(this.genericAPI_url+'/category')
                         .map(this.extractData)
                         .catch(this.handleError);
 
@@ -89,11 +89,10 @@ export class CategoryService extends GenericHttp{
 
 @Injectable()
 export class JobService extends GenericHttp{
-    url: string;
-
+   
     constructor(private http: Http){
         super();
-        this.url = 'http://localhost:3311/api/employer/job';
+        
     }
 
    
@@ -102,7 +101,7 @@ export class JobService extends GenericHttp{
         let headers = new Headers({'Content-Type':'application/json'});
         let options = new RequestOptions({headers:headers});
 
-        return this.http.post(this.url,{newJobPost},options)
+        return this.http.post(this.genericAPI_url+'/employer/job',{newJobPost},options)
                         .map(this.extractData)
                         .catch(this.handleError);
     }
@@ -113,7 +112,7 @@ export class JobService extends GenericHttp{
         
         let options = new RequestOptions({headers:headers});
 
-        return this.http.post('http://localhost:3311/api/employer/job/update',{newJobPost},options)
+        return this.http.post(this.genericAPI_url+'/employer/job/update',{newJobPost},options)
                         .map(this.extractDataAndCreateJob)
                         .catch(this.handleError);
     }
@@ -127,7 +126,7 @@ export class JobService extends GenericHttp{
         let user = JSON.parse(localStorage.getItem('currentUser'));
 
         if (user){
-            return this.http.post('http://localhost:3311/api/employer/userpostedjoblist',{ owner:user._id },options)
+            return this.http.post(this.genericAPI_url+'/employer/userpostedjoblist',{ owner:user._id },options)
                         .map(this.extractPostedJobsData)
                         .catch(this.handleError);
         }else{
@@ -144,7 +143,7 @@ export class JobService extends GenericHttp{
         let user = JSON.parse(localStorage.getItem('currentUser'));
 
         if (user){
-            return this.http.post('http://localhost:3311/api/employer/userpostedjob',{owner:user._id,jobID:id},options)
+            return this.http.post(this.genericAPI_url+'/employer/userpostedjob',{owner:user._id,jobID:id},options)
                             .map(this.extractPostedJobsData)
                             .catch(this.handleError);
         }else{
