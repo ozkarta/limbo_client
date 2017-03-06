@@ -45,7 +45,7 @@ export class ChatService extends GenericHttp{
         // };
         // this.me = new ConversationUser();
 
-        this.ws = <Subject<ServerResponse>>this.weService.connect(this.genericWS_url)
+        this.ws = <Subject<ServerResponse>>this.weService.connect(this.genericWS_url+'?token='+this.getMyId())
             .map((response: MessageEvent): ServerResponse => {
 
                 this.connected = true;
