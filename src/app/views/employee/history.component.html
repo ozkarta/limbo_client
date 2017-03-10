@@ -1,4 +1,220 @@
 <employee></employee>
 
 
-History
+
+
+
+<div class="container-fluid" >
+  <div class="row content">
+    <div class="col-sm-3 sidenav">
+      <h1>History</h1>
+      <div class="nav">
+        <div class="taboz">
+          <ul class="nav nav-pills nav-stacked">
+           
+            <li class="active"><a href="#proposed" >Proposed</a></li>            
+            <li><a href="#declined" >Declined</a></li>    
+            <li><a href="#interviewing" >Interviewing</a></li>             
+            <li><a href="#accepted" >Accepted(In Proggress)</a></li>
+            <li><a href="#withdrawed" >Withdrawed</a></li>  
+            <li><a href="#finished" >Finished</a></li>
+
+            <li><a href="#feadback" >Feadback</a></li>  
+
+            
+           
+          </ul><br>
+        </div>
+      </div>
+    </div>
+
+    <div class="col-sm-9 tab-content" id="proposed" >
+       <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Send Date</th>
+                            <th>Job Title</th>                            
+                            <th>budget</th>
+                            <th>DeadLine</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+
+                        <tr *ngFor="let proposed of proposedArray">
+                            <td>{{proposed.createdAt}}</td>
+                            <td><a routerLink="/employee/viewjob/{{proposed.jobTitle}}/{{proposed.jobID}}">{{proposed.jobTitle}}</a></td>
+                            <td>{{proposed.budget}}</td>
+                            <td>{{proposed.deadline}}</td>
+                            <td>{{proposed.duration}}</td>
+                            <td>{{proposed.price}} {{proposed.currency}}</td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+          </div>
+    </div>
+
+    <div class="col-sm-9 tab-content" id="declined" >
+      <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Send Date</th>
+                            <th>Job Title</th>                            
+                            <th>budget</th>
+                            <th>DeadLine</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let declined of declinedArray">
+                            <td>{{declined.createdAt}}</td>
+                            <td>{{declined.jobTitle}}</td>
+                            <td>{{declined.budget}}</td>
+                            <td>{{declined.deadline}}</td>
+                            <td>{{declined.duration}}</td>
+                            <td>{{declined.price}} {{declined.currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+          </div>
+    
+    </div>     
+
+    <div class="col-sm-9 tab-content" id="interviewing" >
+      <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Send Date</th>
+                            <th>Job Title</th>                            
+                            <th>budget</th>
+                            <th>DeadLine</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let accepted of acceptedArray">
+                            <td>{{accepted.createdAt}}</td>
+                            <td>{{accepted.jobTitle}}</td>
+                            <td>{{accepted.budget}}</td>
+                            <td>{{accepted.deadline}}</td>
+                            <td>{{accepted.duration}}</td>
+                            <td>{{accepted.price}} {{accepted.currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+          </div>
+    </div>
+
+    <div class="col-sm-9 tab-content" id="accepted" >
+      <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Send Date</th>
+                            <th>Job Title</th>                            
+                            <th>budget</th>
+                            <th>DeadLine</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let withdrawed of withdrawedArray">
+                            <td>{{withdrawed.createdAt}}</td>
+                            <td>{{withdrawed.jobTitle}}</td>
+                            <td>{{withdrawed.budget}}</td>
+                            <td>{{withdrawed.deadline}}</td>
+                            <td>{{withdrawed.duration}}</td>
+                            <td>{{withdrawed.price}} {{withdrawed.currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+          </div>
+    
+    </div>    
+
+    <div class="col-sm-9 tab-content" id="withdrawed" >
+      <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Send Date</th>
+                            <th>Job Title</th>                            
+                            <th>budget</th>
+                            <th>DeadLine</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let finished of finishedArray">
+                            <td>{{finished.createdAt}}</td>
+                            <td>{{finished.jobTitle}}</td>
+                            <td>{{finished.budget}}</td>
+                            <td>{{finished.deadline}}</td>
+                            <td>{{finished.duration}}</td>
+                            <td>{{finished.price}} {{finished.currency}}</td>
+                        </tr>
+                    </tbody>
+                </table>
+          </div>
+    
+    </div>
+
+    <div class="col-sm-9 tab-content" id="finished" >
+      <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Send Date</th>
+                            <th>Job Title</th>                            
+                            <th>budget</th>
+                            <th>DeadLine</th>
+                            <th>Duration</th>
+                            <th>Price</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+     
+                      </tbody>
+                </table>
+          </div>
+    
+    </div>
+
+    <div class="col-sm-9 tab-content" id="feadback" >
+      <div>
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Rating Date</th>
+                            <th>Rating</th>                            
+                            <th>Job Name</th>
+                            <th>Feedback Text</th>
+                            
+                        </tr>                        
+                    </thead>
+                    <tbody>
+     
+                      </tbody>
+                </table>
+          </div>
+    
+    </div>
+
+  </div>
+</div>
+

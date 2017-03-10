@@ -17,7 +17,9 @@ export class GenericHttp{
         this.httpsProtocol = 'https:';
         this.wsProtocol = 'ws:';
 
-        this.serverIP = 'geolimgo.herokuapp.com';
+        
+        //this.serverIP = 'geolimgo.herokuapp.com';
+        this.serverIP = 'localhost:3311';
 
         this.serverPort = '3311';
 

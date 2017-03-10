@@ -44,6 +44,132 @@ export class EmployeeJobService extends GenericHttp{
     }
 
 
+ //_________________________________________________________________________________________
+
+
+    getProposedJobs(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/proposed',{user:user._id},options)
+            .map(this.getProposedJobsMapper)
+            .catch(this.handleError);
+    }
+    private getProposedJobsMapper(res: Response){
+        let body = res.json();
+
+
+        return body;
+    }   
+
+    getDeclinedJobs(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/declined',{user:user._id},options)
+            .map(this.getDeclinedJobsMapper)
+            .catch(this.handleError);
+    }
+    private getDeclinedJobsMapper(res: Response){
+        let body = res.json();
+
+        
+        return body;
+    }
+
+   getInterviewingJobs(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/interviewing',{user:user._id},options)
+            .map(this.getInterviewingJobsMapper)
+            .catch(this.handleError);
+    }
+    private getInterviewingJobsMapper(res: Response){
+        let body = res.json();
+
+        
+        return body;
+    }
+
+    getAcceptedJobs(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/accepted',{user:user._id},options)
+            .map(this.getAcceptedJobsMapper)
+            .catch(this.handleError);
+    }
+    private getAcceptedJobsMapper(res: Response){
+        let body = res.json();
+
+        
+        return body;
+    }
+
+    getWithdrawedJobs(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/withdrawed',{user:user._id},options)
+            .map(this.getWithdrawedJobsMapper)
+            .catch(this.handleError);
+    }
+    private getWithdrawedJobsMapper(res: Response){
+        let body = res.json();
+
+        
+        return body;
+    }
+    
+    getFinishedJobs(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/finished',{user:user._id},options)
+            .map(this.getFinishedJobsMapper)
+            .catch(this.handleError);
+    }
+    private getFinishedJobsMapper(res: Response){
+        let body = res.json();
+
+        
+        return body;
+    }
+
+    getFeadback(): Observable <any>{
+         let headers = new Headers({ 'Content-Type': 'application/json' });
+         let options = new RequestOptions({ headers: headers });
+
+         let user = this.getUser();
+          return this.http.post(this.genericAPI_url + '/employee/history/feadback',{user:user._id},options)
+            .map(this.getFeadbackMapper)
+            .catch(this.handleError);
+    }
+    private getFeadbackMapper(res: Response){
+        let body = res.json();
+
+        
+        return body;
+    }
+
+    
+
+
+   //_________________________________________________________________________________________
+
+
+    private getUser(){
+        let user = JSON.parse(localStorage.getItem('currentUser'));
+
+        return user;
+    }
 
 
 
