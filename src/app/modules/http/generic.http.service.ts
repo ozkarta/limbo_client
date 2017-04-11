@@ -18,8 +18,8 @@ export class GenericHttp{
         this.wsProtocol = 'ws:';
 
         
-        //this.serverIP = 'geolimgo.herokuapp.com';
-        this.serverIP = 'localhost:3311';
+        this.serverIP = 'geolimgo.herokuapp.com';
+        //this.serverIP = 'localhost:3311';
 
         this.serverPort = '3311';
 

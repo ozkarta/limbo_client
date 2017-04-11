@@ -1,0 +1,244 @@
+/*-------------------------------------header--------------------------------*/
+
+
+
+.menu-bar {
+  display: flex;
+  align-items: center;
+}
+
+.navbar-default{
+  background:#9d9d9d;
+  background: -webkit-linear-gradient(top, #c3c3c3, #aaa, #9d9d9d, #a0a0a0, #b2b2b2); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #c3c3c3, #aaa, #9d9d9d, #a0a0a0, #b2b2b2); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #c3c3c3, #aaa, #9d9d9d, #a0a0a0, #b2b2b2); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #c3c3c3, #aaa, #9d9d9d, #a0a0a0, #b2b2b2); /* Standard syntax (must be last) */
+  /*border-top: 1px solid #ddd;*/
+  border-bottom: 1px solid #ccc;
+}
+
+.navbar-default .navbar-nav>li>a {
+  color: #eee;
+  min-width: 80px;
+  text-align: center;
+}
+
+.navbar-brand {
+  padding: 0px;
+  height: auto;
+}
+
+.main-menu {
+  margin-left: 15px;
+}
+
+.logo {
+  border-radius: 50%;
+  overflow: hidden;
+  margin-left: 15px;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+  /*flex-direction: column;*/
+}
+
+.navbar-collapse .navbar-nav>li>a:hover {
+  background: #8c9cbc;
+  background: -webkit-linear-gradient(top, #abd, #8c9cbc, #78a, #89b, #9ac); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, #abd, #8c9cbc, #78a, #89b, #9ac); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, #abd, #8c9cbc, #78a, #89b, #9ac); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, #abd, #8c9cbc, #78a, #89b, #9ac); /* Standard syntax (must be last) */
+  border-radius: 25px;
+  color: #fff;
+  opacity: .6;
+  cursor: pointer;
+}
+
+.navbar-collapse {
+  width: 100%;
+  overflow: hidden;
+}
+
+
+
+
+
+@media screen and (max-width: 767px) {
+  .menu {
+    display: block;
+  }
+
+  .navbar-header {
+    width: 100%;
+    margin: 0 auto!important;
+    overflow: hidden;
+  }
+
+  .logo {
+    margin-left: 15px;
+  }
+
+  .navbar-toggle {
+    margin-top: 13px;
+  }
+
+  .navbar-collapse {
+    margin-left: 0px!important;
+  }
+
+  .main-menu {
+    margin-left: 0px;
+    margin-right: 0px!important;
+  }
+}
+
+
+
+/*----------------------employee home-----------------------*/
+.left-menu {
+  webkit-transition: all 300ms ease-in-out;
+  transition: all 300ms ease-in-out;
+}
+
+.left-menu .container-fluid {
+  margin-top: 10px;
+}
+
+.left-menu label {
+  letter-spacing: 0.6px;
+  font-size: 18px;
+  border-color: #347;
+  margin-bottom: 8px;
+}
+
+.choose-category {
+  margin-bottom: 5px;
+}
+
+.category-item {
+  height: 25px!important
+}
+
+.left-menu .input-group {
+  width: 80%;
+}
+
+.searchByText input {
+  width: calc(100% - 39px)!important;
+}
+
+.sub-category {
+  margin: 15px 0;
+  margin-bottom: 5px;
+}
+
+.searchByText .input-group-btn {
+  display: inline-block!important;
+}
+
+.searchByText .input-group-btn button {
+  background-color: rgba(140, 156, 188, 0.7)!important;
+}
+
+.searchByText .input-group-btn button:hover {
+  background-color: rgba(140, 156, 188, 1)!important;
+}
+
+.select {
+  width: 100%;
+}
+
+.job-title {
+  font-size: 14px!important;
+  display: inline-block;
+  margin: 7px 0;
+}
+
+.job-title:hover {
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.job-title h1 {
+  color: #456!important;
+  opacity: .85;
+  margin: 6px 0;
+}
+
+.job-title h1:hover {
+  opacity: 1;
+}
+
+.work-price {
+  font-size: 23px;
+  margin-left: 30px;
+  color: #465;
+}
+
+.badge {
+  padding: 6px 8px!important;
+  border-radius: 4px!important;
+  background-color: rgba(140, 156, 188, 0.45)!important;
+  color: #236!important;
+}
+
+.work-location {
+  margin-left: 30px;
+  position: relative;
+}
+
+.work-location img {
+  height: 20px;
+  width: 20px;
+}
+
+.work-location span {
+  margin-left: 10px;
+  font-size: 16px;
+  color: #457;
+  letter-spacing: .8px;
+  position: relative;
+  top: 2px;
+}
+
+.work-price img {
+  height: 25px;
+  width: 25px;
+  margin-right: 8px;
+}
+
+.job-post-shadow {
+  background: inherit;
+  background: -webkit-linear-gradient(top, rgba(140, 156, 188, 0.2), rgba(140, 156, 188, 0.05),  rgba(140, 156, 188, 0)); /* For Safari 5.1 to 6.0 */
+  background: -o-linear-gradient(bottom, rgba(140, 156, 188, 0.2), rgba(140, 156, 188, 0.05),  rgba(140, 156, 188, 0)); /* For Opera 11.1 to 12.0 */
+  background: -moz-linear-gradient(bottom, rgba(140, 156, 188, 0.2), rgba(140, 156, 188, 0.05),  rgba(140, 156, 188, 0)); /* For Firefox 3.6 to 15 */
+  background: linear-gradient(to bottom, rgba(140, 156, 188, 0.2), rgba(140, 156, 188, 0.05),  rgba(140, 156, 188, 0)); /* Standard syntax (must be last) */
+  height: 10px;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*#475379*/
