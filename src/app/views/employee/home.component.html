@@ -1,7 +1,7 @@
 <employee></employee>
 
 <div class="home">
-    <div class="left-menu col-sm-3">
+    <div class="left-menu">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
@@ -18,12 +18,10 @@
                                 <label class="sub-category" for="filter">Choose Sub Category</label>
                                 <select class="form-control" name="subcategory" (change)="subCategoryChanged($event.target.value)">
                                     <option  selected value> -- Select sub Category -- </option>
-                                    <option *ngFor="let cat of subCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
+                                    <option style="width: 100%" *ngFor="let cat of subCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
                                 </select>
                             </div>
-                            <br/>
                             <div>
-                                <br/>
                                 <label for="filter">Search By Keywords</label>
                             </div>
 
@@ -39,10 +37,10 @@
                                     </div>
                                 </div>
                             </div>
-                            <br/><br/><br/>
                         </div>
+                        <div class="close-search-categories" id="close-search" (click)="closeSearchClick()" >Close</div>
                     </form>
-                    <div>
+                    <div class="recent-search">
                         <h1>Recent Searches</h1>
                         <br/>
                         <a href="">Search 1</a>
@@ -60,9 +58,12 @@
             </div>
         </div>
     </div>
-    <div class="col-sm-9 job-section">
+    <div class="job-section">
         <div class="container-fluid">
             <div class="">
+                <div class="search-and-categories">
+                  <p>Search & Categories</p>
+                </div>
                 <div class="job-post" *ngFor = "let job of jobList">
                     <a class="job-title" routerLink="/employee/viewjob/{{ job.jobTitle }}/{{ job.id }}">
                         <h1>{{ job.jobTitle }}</h1>
@@ -108,3 +109,6 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="../../../public/js/main.js">
+
+</script>
