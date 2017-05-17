@@ -512,10 +512,6 @@ small,
     border-left: 1px solid #e7ebef;
 }
 
-.ng-valid {
-  margin-top: 5px;
-}
-
 .chat li img {
     width: 45px;
     height: 45px;
@@ -623,6 +619,49 @@ a:focus {
 }
 
 
+/*----------------------view-job-component----------------------------*/
+
+.view-job-component {
+  color: #444449;
+  padding: 0 15px;
+}
+
+.product-title h1 {
+  display: table;
+  margin: 0 auto;
+}
+
+.product-desc h3 {
+  line-height: 22px;
+}
+
+.job-details li {
+  margin-bottom: 10px;
+  font-size: 17px;
+}
+
+.job-details div {
+  display: inline-block;
+  margin-left: 5px;
+}
+
+.job-proposal-part {
+  margin-top: 20px;
+  padding-left: 0px;
+}
+
+
+
+
+@media screen and (max-width: 500px) {
+  .view-job-component, .job-details li {
+    font-size: 14px;
+  }
+
+  .product-title h1 {
+    font-size: 23px;
+  }
+}
 
 
 
