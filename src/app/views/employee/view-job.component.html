@@ -13,138 +13,130 @@
 
       <div class="row">
 
-        <!--   !!!!image section!!!!   -->
+          <!--   !!!!image section!!!!   -->
 
 
-        <!--<div class="col-md-4">
+          <!--<div class="col-md-4">
 
+          <div class="row">
+          <div class="col-md-12">
+          <img src="http://placehold.it/210x210" class="img-rounded" alt="Cinque Terre" width="210" height="210">
+        </div>
+        </div>
         <div class="row">
-        <div class="col-md-12">
-        <img src="http://placehold.it/210x210" class="img-rounded" alt="Cinque Terre" width="210" height="210">
-      </div>
-    </div>
-    <div class="row">
-    <div class="col-md-3">
-    <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">
-  </div>
-  <div class="col-md-3">
-  <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">
-  </div>
-  <div class="col-md-3">
-  <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">
-  </div>
-  </div>
+        <div class="col-md-3">
+        <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">
+        </div>
+        <div class="col-md-3">
+        <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">
+        </div>
+        <div class="col-md-3">
+        <img src="http://placehold.it/70x70" class="img-rounded" alt="Cinque Terre" width="70" height="70">
+        </div>
+        </div>
 
-  </div>-->
-  <div class="product-title">
-    <h1>{{jobPost.jobTitle}}</h1>
-  </div>
-  <div class="product-desc">
-    <h3>{{jobPost.jobDescription}}</h3>
-  </div>
-  <ul class="job-details">
-    <li>Payment type :<div>{{jobPost.paymentType}}</div> </li>
-    <li>Job Budget :<div>{{jobPost.budget}}  {{jobPost.currency}}</div>   </li>
-    <li>Create date :<div>{{jobPost.createdAt}}</div></li>
-    <li>Deadline :<div>{{jobPost.deadline}}</div></li>
-    <li>Project type :<div>{{jobPost.projectType}}</div></li>
-    <!-- <div>
-    payment type
-    <h2>{{jobPost.paymentType}}</h2>
-  </div>
-  <div class="product-price">
-  Job Budget : {{jobPost.budget}}  {{jobPost.currency}}
-  </div>
+        </div>-->
+          <div class="product-title">
+            <h1>{{jobPost.jobTitle}}</h1>
+          </div>
+          <div class="product-desc">
+            <h3>{{jobPost.jobDescription}}</h3>
+          </div>
+          <ul class="job-details">
+            <li>Payment type :<div>{{jobPost.paymentType}}</div> </li>
+            <li>Job Budget :<div>{{jobPost.budget}}  {{jobPost.currency}}</div>   </li>
+            <li>Create date :<div>{{jobPost.createdAt}}</div></li>
+            <li>Deadline :<div>{{jobPost.deadline}}</div></li>
+            <li>Project type :<div>{{jobPost.projectType}}</div></li>
+        <!-- <div>
+        payment type
+        <h2>{{jobPost.paymentType}}</h2>
+        </div>
+        <div class="product-price">
+        Job Budget : {{jobPost.budget}}  {{jobPost.currency}}
+        </div>
 
-  <div>
-  create date
-  {{jobPost.createdAt}}
-  </div>
-  <div>
-  deadline
-  {{jobPost.deadline}}
-  </div>
-  <div>
-  project type
-  <h2>{{jobPost.projectType}}</h2>
-  </div> -->
-  </ul>
+        <div>
+        create date
+        {{jobPost.createdAt}}
+        </div>
+        <div>
+        deadline
+        {{jobPost.deadline}}
+        </div>
+        <div>
+        project type
+        <h2>{{jobPost.projectType}}</h2>
+        </div> -->
+          </ul>
 
-  <div class="row">
-    <div class="col-xs-12">
-      <div class="nav">
-        <div class="taboz">
-          <ul class="nav nav-tabs nav_tabs">
-            <li class="active">
-              <a href="#about" data-toggle="tab">About Client</a>
-            </li>
-            <li [ngStyle] = "changeApplyVisibility"><a href="#changeproposal" data-toggle="tab">Change Proposal Terms</a>
-            </li>
-            <!-- <li><a href="#progress" data-toggle="tab">Job Progress</a>
-          </li> -->
-          <li [ngStyle] = "applyVisibility"><a href="#apply" data-toggle="tab">Apply for this job</a>
-          </li>
-        </ul>
-      </div>
-    </div>
-  </div>
-  </div>
-  <div class="col-sm-9 tab-content job-proposal-part" id="about">
-    <div class="form-group">
-      <label class="form-control">owner</label>
-    </div>
-    <div class="form-group">
-      <label class="form-control">client</label>
-    </div>
-    <div class="form-group">
-      <label class="form-control">last visited</label>
-    </div>
-  </div>
+          <div>
+            <div class="col-xs-12">
+              <div class="nav">
+                  <div class="taboz">
+                    <ul class="nav nav-tabs nav_tabs">
+                      <li class="active">
+                        <a href="#about" data-toggle="tab">About Client</a>
+                      </li>
+                      <li [ngStyle] = "changeApplyVisibility"><a href="#changeproposal" data-toggle="tab">Change Proposal Terms</a>
+                      </li>
+                      <!-- <li><a href="#progress" data-toggle="tab">Job Progress</a>
+                    </li> -->
+                    <li [ngStyle] = "applyVisibility"><a href="#apply" data-toggle="tab">Apply for this job</a>
+                    </li>
+                  </ul>
+                 </div>
+              </div>
+            </div>
+          </div>
+          <div class="col-xs-9 tab-content job-proposal-part" id="about">
+            <div class="form-group">
+              <label class="form-control">owner</label>
+            </div>
+            <div class="form-group">
+              <label class="form-control">client</label>
+            </div>
+            <div class="form-group">
+              <label class="form-control">last visited</label>
+            </div>
+          </div>
 
-  <div class="col-sm-9 tab-content job-proposal-part" id="changeproposal" *ngIf="alreadyApplied">
-    Change Proposal Termsqqqqqqq
-  </div>
+          <div class="col-xs-9 tab-content job-proposal-part" id="changeproposal" *ngIf="alreadyApplied">
+            Change Proposal Termsqqqqqqq
+          </div>
 
-  <div class="col-sm-9 tab-content job-proposal-part" id="apply" *ngIf="!alreadyApplied">
-    <form (ngSubmit)="sendProposal()" >
-      <div class="form-group">
-        <label for="price" class="">Price You offer</label>
-        <input type="text" name="price" id="price" class="form-control" required="required" [(ngModel)] = "proposal.price" >
-      </div>
-      <div class="form-group">
-        <label for="CURRENCY">CURRENCY</label>
-        <select class="form-control" id="CURRENCY" name="CURRENCY" required="required" (change)="currencyChanged($event.target.value)">
-          <option *ngFor="let currency of currencyList" value="{{currency.id}}">{{currency.currency}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="duration">Estimated Duration</label>
-        <select class="form-control" id="duration" name="duration" required="required" (change)="durationChanged($event.target.value)">
-          <option *ngFor="let duration of durationList" value="{{duration.id}}">{{duration.duration}}</option>
-        </select>
-      </div>
-      <div class="form-group">
-        <label for="coverLetter" class="">Cover Letter</label>
-        <textarea rows="5" name="coverLetter" id="coverLetter" placeholder="Cover Letter" class="form-control" required="required" [(ngModel)] = "proposal.coverLetter" ></textarea>
-      </div>
-      <div class="form-group">
-        <label for="whyYouFit" class="">Why are  you BEST fit for this project</label>
-        <textarea rows="5" name="whyYouFit" id="coverLetter" placeholder="" class="form-control" required="required" [(ngModel)] = "proposal.whyToChoose" ></textarea>
-      </div>
-
-      <div class="form-group">
-        <input type="submit" class="form-control" value="Apply">
-      </div>
-    </form>
-  </div>
-
-
-
-
-
-
-
-  </div>
+          <div class="col-xs-9 tab-content job-proposal-part" id="apply" *ngIf="!alreadyApplied">
+            <form (ngSubmit)="sendProposal()" >
+            <div class="form-group offer-price">
+              <label for="price" class="">Price you offer</label>
+              <input type="text" name="price" id="price" class="form-control" required="required" [(ngModel)] = "proposal.price" >
+            </div>
+            <div class="form-group currency">
+              <label for="CURRENCY">Currency</label>
+              <select class="form-control" id="CURRENCY" name="CURRENCY" required="required" (change)="currencyChanged($event.target.value)">
+                <option *ngFor="let currency of currencyList" value="{{currency.id}}">{{currency.currency}}</option>
+              </select>
+            </div>
+            <div class="form-group estimated-duration">
+              <label for="duration">Estimated duration</label>
+              <select class="form-control" id="duration" name="duration" required="required" (change)="durationChanged($event.target.value)">
+                <option *ngFor="let duration of durationList" value="{{duration.id}}">{{duration.duration}}</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="coverLetter" class="">Cover Letter</label>
+              <textarea rows="5" name="coverLetter" id="coverLetter" placeholder="Cover Letter" class="form-control" required="required" [(ngModel)] = "proposal.coverLetter" ></textarea>
+            </div>
+            <div class="form-group">
+              <label for="whyYouFit" class="">Why are  you BEST fit for this project</label>
+              <textarea rows="5" name="whyYouFit" id="coverLetter" placeholder="" class="form-control" required="required" [(ngModel)] = "proposal.whyToChoose" ></textarea>
+            </div>
+            <div class="apply-to-job">
+              apply
+            </div>
+            </form>
+          </div>
+        </div>
   </div>
 
 </div>

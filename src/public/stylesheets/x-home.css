@@ -650,7 +650,36 @@ a:focus {
   padding-left: 0px;
 }
 
+.apply-to-job {
+  display: inline-block;
+  padding: 9px 30px;
+  border: 1px solid #8790a3;
+  border-radius: 4px;
+  font-size: 17px;
+  letter-spacing: 0.8px;
+  background-color: #b3e08f;
+  margin-bottom: 20px;
+}
 
+.apply-to-job:hover {
+  background-color: #a5d484;
+  cursor: pointer;
+}
+
+.currency , .offer-price {
+  display: inline-block;
+  width: 100px;
+}
+
+.estimated-duration {
+  display: inline-block;
+  width: 150px;
+  margin-left: 10px;
+}
+
+.currency {
+  margin-left: 10px;
+}
 
 
 @media screen and (max-width: 500px) {
@@ -660,6 +689,11 @@ a:focus {
 
   .product-title h1 {
     font-size: 23px;
+  }
+
+  .currency , .estimated-duration {
+    display: block;
+    margin-left: 0px;
   }
 }
 
