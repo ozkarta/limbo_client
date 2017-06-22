@@ -1,14 +1,14 @@
 <visitor></visitor>
-
-<h1>Log In</h1>
-
-<form (ngSubmit)="onSubmitLocalAuth()" #logInForm="ngForm" class="form-group">
-	<input type="text" [(ngModel)]="auth.userName" name="userName" placeholder="User Name" class="form-control" required>
-	<input type="password" [(ngModel)]="auth.password" name="password" placeholder="Password" class="form-control" required>
-	
-	<input type="submit" class="form-control">
-</form>
-<h1>OR</h1>
-
-<h1><a href="logInFacebook">Facebook Authentication</a></h1>
-<h1><a href="logInGoogle">Google Authentication</a></h1>
+<div class="authorisation">
+	<div class="log-in-section">
+		<h1>Log In</h1>
+		<form (ngSubmit)="onSubmitLocalAuth()" #logInForm="ngForm" class="form-group">
+			<input type="text" [(ngModel)]="auth.userName" name="userName" placeholder="User Name" class="form-control" required>
+			<input type="password" [(ngModel)]="auth.password" name="password" placeholder="Password" class="form-control" required>
+			<input type="submit" class="form-control submit-authorisation">
+		</form>
+		<h3>OR</h3>
+		<a class="authentication" href="logInFacebook"><h2>log in with facebook</h2></a>
+		<a class="authentication" href="logInGoogle"><h2>log in with google</h2></a>
+	</div>
+</div>

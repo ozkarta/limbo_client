@@ -1,48 +1,31 @@
 <employee></employee>
 
-<div style="display:inline-flex">
-    <div style="display: inline-block;width:20%">
-
-        <div class="container" style="padding-left:0px;width:100%">
+<div class="home">
+    <div class="left-menu">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col-md-12">
-
-
                     <form (ngSubmit)="onSubmit()" #searchForm="ngForm">
-
-
-                        <div class="input-group" id="adv-search" style="display: inline-block">
-
-
-
-
+                        <div class="input-group" id="adv-search">
                             <div class="form-group">
-                                <label for="filter">Choose Category</label>
-
+                                <label class="choose-category" for="filter">Choose Category</label>
                                 <select class="form-control" (change)="onChange($event.target.value)" name="category">
-                                        <option  selected value> -- Select Category -- </option>
-                                        <option *ngFor="let cat of jobCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
-                                        
-                                    </select>
+                                    <option  selected value> -- Select Category -- </option>
+                                    <option *ngFor="let cat of jobCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
+                                </select>
                             </div>
-
                             <div class="form-group" *ngIf="categorySelected">
-                                <label for="filter">Choose Sub Category</label>
-
+                                <label class="sub-category" for="filter">Choose Sub Category</label>
                                 <select class="form-control" name="subcategory" (change)="subCategoryChanged($event.target.value)">
-                                        <option  selected value> -- Select sub Category -- </option>
-                                        <option *ngFor="let cat of subCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
-                                        
-                                    </select>
+                                    <option  selected value> -- Select sub Category -- </option>
+                                    <option style="width: 100%" *ngFor="let cat of subCategory" value="{{ cat.id }}" >{{ cat.categoryVarName }}</option>
+                                </select>
                             </div>
-
-                            <br/>
-                            <div class="form-group">
-                                <br/>
+                            <div>
                                 <label for="filter">Search By Keywords</label>
                             </div>
 
-                            <div class="form-group" style="display: table-row">
+                            <div class="form-group searchByText">
 
 
                                 <input type="text" [(ngModel)]="searchModel.searchString" class="form-control" placeholder="Search for snippets" name="jobSearch" />
@@ -54,20 +37,10 @@
                                     </div>
                                 </div>
                             </div>
-
-
-
-
-                            <br/><br/><br/>
-
-
-
-
                         </div>
+                        <div class="close-search-categories" id="close-search" (click)="closeSearchClick()" >Close</div>
                     </form>
-
-                    <div style="display:table-row">
-
+                    <div class="recent-search">
                         <h1>Recent Searches</h1>
                         <br/>
                         <a href="">Search 1</a>
@@ -81,26 +54,25 @@
                         <a href="">Search 5</a>
                         <br/>
                     </div>
-
-
                 </div>
             </div>
         </div>
-
-
     </div>
-
-    <div style="width:80%">
-        <div class="container" style="width:100%">
-            <div class="col-md-12">
-
-                <div *ngFor = "let job of jobList">
-                    <a routerLink="/employee/viewjob/{{ job.jobTitle }}/{{ job.id }}">
+    <div class="job-section">
+        <div class="container-fluid">
+            <div class="">
+                <div class="search-and-categories">
+                  <p>Search & Categories</p>
+                </div>
+                <div class="job-post" *ngFor = "let job of jobList">
+                    <a class="job-title" routerLink="/employee/viewjob/{{ job.jobTitle }}/{{ job.id }}">
                         <h1>{{ job.jobTitle }}</h1>
                     </a>
-                    <p>{{ job.jobDescription }}</p>
+                    <span class="work-price"><img src="/src/public/images/coins.svg" alt="">$500</span>
+                    <p class="job-description">{{ job.jobDescription }}</p>
                     <div>
                         <span class="badge">Posted {{ job.createdAt }}</span>
+                        <span class="work-location"><img src="/src/public/images/location.svg" alt=""><span>Tbilisi</span></span>
                         <!--<div class="pull-right">
                             <span class="label label-default">alice</span>
                             <span class="label label-primary">story</span>
@@ -110,7 +82,7 @@
                             <span class="label label-danger">Danger</span>
                         </div>-->
                     </div>
-                    <hr>
+                    <hr class="job-post-shadow">
                 </div>
 
 
@@ -137,3 +109,6 @@
         </div>
     </div>
 </div>
+<script type="text/javascript" src="../../../public/js/main.js">
+
+</script>

@@ -1,58 +1,51 @@
 <header>
     <div class="navbar-wrapper">
-        <nav class="navbar navbar-inverse navbar-static-top black-color" role="navigation">
-            <div class="container">
+        <nav class="navbar navbar-default" role="navigation">
+            <div class="container menu">
                 <div class="navbar-header">
                     <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
-                                    <span class="sr-only">Toggle navigation</span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                    <span class="icon-bar"></span>
-                                </button>
+                      <span class="sr-only">Toggle navigation</span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                      <span class="icon-bar"></span>
+                    </button>
+                  <a class="navbar-brand logo" [routerLink]="['/']"><img src="/src/public/images/logo.png" alt=""></a>
                 </div>
-                <div class="container-fluid" id="">
-                    <div class="navbar-header">
-                        <a [routerLink]="['/']"><img src="/src/public/images/logo.png" alt=""></a>
-                    </div>
+                <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                   <ul class="nav navbar-nav main-menu">
+                      <li><a routerLink="/">Home</a> </li>
+                      <li><a routerLink="/employee/history">History</a> </li>
+                      <!-- <li><a href="toprank"></a> </li>
+                      <li><a href="blog"></a> </li> -->
+                      <!-- <li><a href="about">About Us</a> </li> -->
+                      <!-- <li class="dropdown">
 
-                   <ul class="nav navbar-nav">
-                                  <li><a routerLink="/">Home</a> </li>
-                                  <li><a routerLink="/employee/history">History</a> </li>
-                                  <!-- <li><a href="toprank"></a> </li>
-                                  <li><a href="blog"></a> </li> -->
-                                  <!-- <li><a href="about">About Us</a> </li> -->
-                                  <!-- <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">History
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">Proposals</a></li>
+                          <li><a href="#">Interviewing</a></li>
+                          <li><a href="#">Active Jobs</a></li>
+                          <li><a href="#">Finished Jobs</a></li>
+                        </ul>
+                      </li> -->
+                      <li><a routerLink="/employee/topworker">Top Workers</a> </li>
+                      <li><a routerLink="/employee/messenger">Message</a> </li>
+                      <li><a routerLink="/employee/subscribes">Subscribes</a> </li>
+                      <li><a routerLink="/employee/account">Account</a> </li>
 
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">History
-                                    <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                      <li><a href="#">Proposals</a></li>
-                                      <li><a href="#">Interviewing</a></li>
-                                      <li><a href="#">Active Jobs</a></li>
-                                      <li><a href="#">Finished Jobs</a></li>                                        
-                                    </ul>
-                                  </li> -->
-                                  <li><a routerLink="/employee/topworker">Top Workers</a> </li>
-                                  <li><a routerLink="/employee/messenger">Message</a> </li>
-                                  <li><a routerLink="/employee/subscribes">Subscribes</a> </li>
-                                  <li><a routerLink="/employee/account">Account</a> </li>
-                                  
-                                 <!--  <li class="dropdown">
-                                    <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile
-                                    <span class="caret"></span></a>
-                                    <ul class="dropdown-menu">
-                                      <li><a href="#">About your company</a></li>
-                                      <li><a href="#">Manage Workers</a></li>
-                                      <li><a href="#">Accouunt</a></li>
-                                      <li><a href="#">Settings</a></li>  
-                                    </ul>
-                                  </li> -->
-                                  
-
-
-                                   
-                                </ul>
-                                <log-out></log-out>
+                     <!--  <li class="dropdown">
+                        <a class="dropdown-toggle" data-toggle="dropdown" href="#">Profile
+                        <span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                          <li><a href="#">About your company</a></li>
+                          <li><a href="#">Manage Workers</a></li>
+                          <li><a href="#">Accouunt</a></li>
+                          <li><a href="#">Settings</a></li>
+                        </ul>
+                      </li> -->
+                  <li><log-out></log-out></li>
+                  </ul>
                 </div>
             </div>
         </nav>

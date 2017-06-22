@@ -20,7 +20,7 @@ export class EmployeeHomeComponent extends OnInit{
 
   constructor(private genericService: GenericService){
 
-    
+
     super();
 
 
@@ -30,7 +30,7 @@ export class EmployeeHomeComponent extends OnInit{
     this.subCategory = [];
     this.jobList = [];
     this.categorySelected = false;
-    
+
 
     this.genericService.getCategoryList()
                         .subscribe(
@@ -57,7 +57,7 @@ export class EmployeeHomeComponent extends OnInit{
 
     if  (newValue){
       this.categorySelected =true;
-     
+
 
       for (let cat of this.jobCategory ){
 
@@ -71,7 +71,7 @@ export class EmployeeHomeComponent extends OnInit{
       this.searchModel.category = '';
       this.categorySelected = false;
     }
-    
+
   }
 
   subCategoryChanged(val: any){
@@ -100,7 +100,9 @@ export class EmployeeHomeComponent extends OnInit{
                           }
                         )
   }
-  
 
+  closeSearchClick(){
+    console.log('!!!!!!!!!!!!!!! close   works');
+}
 
 }
