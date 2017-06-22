@@ -1,11 +1,136 @@
 <visitor></visitor>
-<h1>Do you already have account? </h1> 
-<a routerLink="../logIn"> Log In</a>
-<h1>Or Sign Up</h1>
+<div class="sign-up">
+	<h1 class="sign-up-title">რეგისტრაცია</h1>
+	<!-- <a routerLink="../logIn"> Log In</a> -->
+	<div class="register-as">
+		<h2>დამსაქმებელი</h2>
+		<h2>პერსონალი</h2>
+	</div>
+	<div class="container">
+		<form (ngSubmit)="onSubmit()" #employerForm="ngForm" class="form-group registration-form">
+			<div class="register-employer">
+				<div class="registration-cell col-sm-6">
+					<input type="text"  class="form-control"  [(ngModel)]="employer.userName" name="userName" #userName="ngModel" placeholder="User Name" required>
+					<!-- <div [hidden]="userName.valid || userName.pristine"	class="alert alert-danger">
+					Name is required
+				</div> -->
+				</div>
 
-<h3>
-	tell us what you  want
-</h3>
-<a routerLink="../registerEmployer" >Hire</a>  people   
-or
-<a routerLink="../registerEmployee" >Find Job</a>
+				<div class="registration-cell col-sm-6">
+					<input type="text"  class="form-control"  [(ngModel)]="employer.fName"   name="fName" #fName="ngModel" placeholder="First Name" required>
+					<!-- <div [hidden]="fName.valid || fName.pristine"	class="alert alert-danger">
+					Name is required
+				  </div> -->
+			  </div>
+
+				<div class="registration-cell col-sm-6">
+					<input type="text"  class="form-control"  [(ngModel)]="employer.lName"   name="lName" #lName="ngModel" placeholder="Last Name" required>
+					<!-- <div [hidden]="lName.valid || lName.pristine" class="alert alert-danger">
+					Name is required
+				</div> -->
+				</div>
+
+				<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control"  [(ngModel)]="employer.eMail"   name="eMail" #eMail="ngModel" placeholder="EMAIL" required>
+						<!-- <div [hidden]="eMail.valid || eMail.pristine" class="alert alert-danger">
+						Name is required
+					</div> -->
+				</div>
+
+				<div class="registration-cell col-sm-6">
+					<input type="password"  class="form-control"  [(ngModel)]="employer.password" name="password" #password="ngModel" placeholder="Password" required>
+					<!-- <div [hidden]="password.valid || password.pristine"	class="alert alert-danger">
+					Name is required
+				</div> -->
+				</div>
+
+				<div class="registration-cell col-sm-6">
+					<input type="password"  class="form-control" name="repassword"  placeholder="Type password again" required>
+				</div>
+			</div>
+
+			<div class="register-employee">
+				<div class="employee-type">
+				  <input type="radio" name="whoami" value="company" checked="true">Company
+					<input type="radio"   name="whoami" value="individual"> Person or group of people
+				</div>
+
+				<form (ngSubmit)="onSubmitCompany()" #employerFormCompany="ngForm" class="form-group">
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.businessName" name="businessname" placeholder="Business Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.controlNumber" name="controlnumber" placeholder="Control Number" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.businessType" name="businesstype" placeholder="Business Type" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.principalOfficeAddress" name="principalofficeaddress" placeholder="Principal Office Address" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.registrationDate" name="registrationdate" placeholder="Date of Formation / Registration Date" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.userName" name="userName" placeholder="User Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.directorFName" name="directorfname" placeholder="Director First Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.directorLName" name="directorlname" placeholder="Director Last Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.eMail" name="email" placeholder="EMAIL" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="company.password" name="password" placeholder="Password" required>
+					</div>
+				</form>
+
+				<form (ngSubmit)="onSubmitIndividual()" #employerFormIndividual="ngForm" class="form-group">
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="individual.userName" name="userName" placeholder="User Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="individual.fName" name="fname" placeholder="First Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="individual.lName" name="lname" placeholder="Last Name" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="individual.eMail" name="email" placeholder="EMAIL" required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="individual.password" name="password" placeholder="Password" required required>
+					</div>
+					<div class="registration-cell col-sm-6">
+						<input type="text"  class="form-control" [(ngModel)]="individual.rePassword" name="repassword" placeholder="Type password again" required>
+					</div>
+				</form>
+			</div>
+
+		<button type="submit" class="submit-registered-user">შენახვა</button>
+	</form>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+	<h1>Or Sign Up</h1>
+
+	<h3>
+		tell us what you  want
+	</h3>
+	<a routerLink="../registerEmployer" >Hire</a>  people
+	or
+	<a routerLink="../registerEmployee" >Find Job</a>
+</div>
