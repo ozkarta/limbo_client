@@ -698,6 +698,181 @@ a:focus {
 }
 
 
+/*--------------visitor home----------------*/
+
+.slogan {
+  width:400px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.slogan h1 {
+  text-align: center;
+  letter-spacing: 0.9px;
+  font-size: 37px;
+}
+
+.registration-autorisation {
+  float: right;
+  margin-right: 70px;
+  font-size: 18px;
+  text-align: center;
+}
+
+.registration-autorisation h3 {
+  line-height: 35px;
+}
+
+.registration-autorisation h3 a {
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+.slogan-2 {
+  display: inline-block;
+  margin-top: 120px;
+  margin-left: 70px;
+}
+
+.slogan-2 h4 {
+  font-size: 17px;
+  line-height: 30px;
+  text-align: center;
+}
+
+
+.slogan-3 {
+  margin-top: 100px;
+  margin-right: 70px;
+}
+
+.slogan-3 h4 {
+  font-size: 17px;
+  line-height: 30px;
+  float: right;
+  text-align: center;
+}
+
+
+
+/*---------------------------sign up---------------------------------*/
+
+.sign-up-title {
+  text-align: center;
+  color: #466!important;
+  margin-top: 50px;
+}
+
+.register-as {
+  width: 60%;
+  margin: 0 auto;
+  margin-top: 30px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.register-as h2 {
+    background-color: #e7ea2b;
+    padding: 10px 15px;
+    width: 180px;
+    text-align: center;
+    border-radius: 8px;
+    border: 1px solid #bb4;
+    color: #454;
+    cursor: pointer;
+    -webkit-transition: all 100ms ease-in-out;
+    transition: all 100ms ease-in-out;
+}
+
+.register-as h2:first-child {
+  background-color: #60de50;
+  border: 1px solid #499;
+}
+
+.register-as h2:hover {
+  border: 1px solid #555;
+  color: #222;
+  box-shadow: 1.5px 2.5px #ccc;
+}
+
+.registration-form {
+  margin-top: 30px;
+}
+
+.registration-cell {
+  margin-bottom: 20px;
+}
+
+.submit-registered-user {
+  -webkit-transition: all 150ms ease-in-out;
+  transition: all 150ms ease-in-out;
+  padding: 6px 12px;
+  background-color: #80ff69;
+  outline: none;
+  font-size: 16px;
+  border-radius: 6px;
+  margin-left: 15px;
+  margin-bottom: 300px;
+}
+
+.submit-registered-user:hover {
+  background-color: #1f5;
+}
+
+
+
+
+/*-----------------------account------------------*/
+
+.main-section {
+  background-color: rgba(134, 170, 222, 0.5);
+  margin: 30px 30px 0;
+  position: relative;
+
+}
+
+.profile-pic{
+  top: 15px;
+  display: inline-block;
+  float: left;
+  width: 300px;
+}
+
+.profile-pic .picture {
+  height: 18vw;
+  width: 16vw;
+  background-color: #bbb;
+  margin-left: 30px;
+  display: inline-block;
+}
+
+.profile-pic .add-pic {
+  margin-left: 30px;
+  padding: 2px 3px;
+  margin-top: 5px;
+}
+
+.profile-info {
+  margin-top: 25px;
+  margin-left: 3vw;
+  position: relative;
+}
+
+.profile-info > * {
+  margin-bottom: 15px;
+  font-size: 16px;
+}
+
+.skills span {
+  display: block;
+  margin: 20px 0;
+  text-align: center;
+  font-size: 18px;
+}
+
+
+
+
 
 
 

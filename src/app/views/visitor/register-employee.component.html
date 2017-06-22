@@ -19,37 +19,37 @@
 
 
 
-	<input type="text" class="form-control" [(ngModel)]="company.businessName" name="businessname" placeholder="Business Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.controlNumber" name="controlnumber" placeholder="Control Number" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.businessType" name="businesstype" placeholder="Business Type" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.principalOfficeAddress" name="principalofficeaddress" placeholder="Principal Office Address" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.registrationDate" name="registrationdate" placeholder="Date of Formation / Registration Date" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.userName" name="userName" placeholder="User Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.directorFName" name="directorfname" placeholder="Director First Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.directorLName" name="directorlname" placeholder="Director Last Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.eMail" name="email" placeholder="EMAIL" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.password" name="password" placeholder="Password" required> 
-	<input type="text"  class="form-control" [(ngModel)]="company.rePassword" name="repassword" placeholder="Type password again" required> 
-	
+	<input type="text"  class="form-control" [(ngModel)]="company.businessName" name="businessname" placeholder="Business Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.controlNumber" name="controlnumber" placeholder="Control Number" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.businessType" name="businesstype" placeholder="Business Type" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.principalOfficeAddress" name="principalofficeaddress" placeholder="Principal Office Address" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.registrationDate" name="registrationdate" placeholder="Date of Formation / Registration Date" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.userName" name="userName" placeholder="User Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.directorFName" name="directorfname" placeholder="Director First Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.directorLName" name="directorlname" placeholder="Director Last Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.eMail" name="email" placeholder="EMAIL" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.password" name="password" placeholder="Password" required>
+	<input type="text"  class="form-control" [(ngModel)]="company.rePassword" name="repassword" placeholder="Type password again" required>
+
 	<br/>
-	<input type="submit" class="form-control" value="Register Company"> 
+	<input type="submit" class="form-control" value="Register Company">
 </form>
 
 <br/>
-<input type="radio"   name="whoami" value="individual"> Person or group of people 
+<input type="radio"   name="whoami" value="individual"> Person or group of people
 <br/>
 
 
-<form (ngSubmit)="onSubmitIndividual()" #employerFormIndividual="ngForm" class="form-group">	
+<form (ngSubmit)="onSubmitIndividual()" #employerFormIndividual="ngForm" class="form-group">
 
 
-	<input type="text"  class="form-control" [(ngModel)]="individual.userName" name="userName" placeholder="User Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="individual.fName" name="fname" placeholder="First Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="individual.lName" name="lname" placeholder="Last Name" required> 
-	<input type="text"  class="form-control" [(ngModel)]="individual.eMail" name="email" placeholder="EMAIL" required> 
-	<input type="text"  class="form-control" [(ngModel)]="individual.password" name="password" placeholder="Password" required required> 
-	<input type="text"  class="form-control" [(ngModel)]="individual.rePassword" name="repassword" placeholder="Type password again" required> 
+	<input type="text"  class="form-control" [(ngModel)]="individual.userName" name="userName" placeholder="User Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="individual.fName" name="fname" placeholder="First Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="individual.lName" name="lname" placeholder="Last Name" required>
+	<input type="text"  class="form-control" [(ngModel)]="individual.eMail" name="email" placeholder="EMAIL" required>
+	<input type="text"  class="form-control" [(ngModel)]="individual.password" name="password" placeholder="Password" required required>
+	<input type="text"  class="form-control" [(ngModel)]="individual.rePassword" name="repassword" placeholder="Type password again" required>
 
 	<br/>
-	<input type="submit" class="form-control" valu="Register Individual"> 
+	<input type="submit" class="form-control" valu="Register Individual">
 </form>
